@@ -118,3 +118,4 @@ class Stack
 
 ## 결과
 
+<img src="./out.png">
