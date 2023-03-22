@@ -5,7 +5,7 @@
 ```csharp
 using System;
 
-class Node
+class Node //노드 클래스
 {
     public int data;
     public Node next;
@@ -22,18 +22,18 @@ class LinkedList
 
     public void add(int input)
     {
-        Node newNode = new Node(input);
-        newNode.next = head;
-        head = newNode;
+        Node newNode = new Node(input); // 추가할 input에 대해 새로운 newNode 생성
+        newNode.next = head;            // newNode 다음을 head로 연결
+        head = newNode;                 // head를 newNode로 변경
     }
     public void delete()
     {
-        head = head.next;
+        head = head.next;               // head를 head.next로 바꿔줌으로써 head를 delete함
     }
     public int get()
-    {
-        if (head == null) return -1;
-        return head.data;
+    { 
+        if (head == null) return -1;    // head가 null일 경우 get할 것이 없으므로 -1 반환
+        return head.data;               // 값이 있을경우 head의 data를 가져감
     }
 }
 class LLStack
@@ -41,14 +41,14 @@ class LLStack
     LinkedList link = new LinkedList();
     public void push(int input)
     {
-        link.add(input);
+        link.add(input);                // linkedlist 에서 구현한 add를 사용하여 input을 추가함
         Console.WriteLine("Linked Input : " + input);
     }
     public int pop()
     {
-        int temp = link.get();
-        link.delete();
-        return temp;
+        int temp = link.get();          // temp에 get한 값을 저장하고
+        link.delete();                  // head를 삭제해준 후
+        return temp;                    // temp를 반환시킴
     }
 }
 class AStack
@@ -59,17 +59,17 @@ class AStack
 
     public AStack(int stSize)
     {
-        top = -1;
-        size = stSize;
-        Array = new int[size];
+        top = -1;                        //top을 -1로 초기설정
+        size = stSize;                   //class 안 size 값을 입력값 stSize로 만듬
+        Array = new int[size];           // Array 객체 생성
     }
     public Boolean isEmpty()
     {
-        return top == -1;
+        return top == -1;                // top이 -1일 경우 추가된 값이 없으므로 비어있음.
     }
     public Boolean isFull()
     {
-        return top == size - 1;
+        return top == size - 1;          // index는 0부터 시작하기에 -1을 해야 배열의 크기와 맞음
     }
     public void push(int data)
     {
@@ -79,7 +79,7 @@ class AStack
         }
         else
         {
-            Array[++top] = data;
+            Array[++top] = data;           // top에서 1을 추가한 위치에 data를 저장해줌
             Console.WriteLine("Array Input : " + data);
         }
     }
@@ -90,7 +90,7 @@ class AStack
             Console.WriteLine("배열이 비어있습니다.");
             return 0;
         }
-        return Array[top--];
+        return Array[top--];                // 먼저 data를 리턴하면서 top에서 1을 
     }
 }
 class Stack
