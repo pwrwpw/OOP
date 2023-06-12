@@ -25,6 +25,6 @@ WinForm 관리 프로그램 개선
 
 
 > 발표 자료
-![ppt 화면](./ppt/ppt.JPG)
+![ppt 화면](./Bank/ppt/ppt.PNG)
 
 > 마지막 수정 날짜(2023-06-12)
